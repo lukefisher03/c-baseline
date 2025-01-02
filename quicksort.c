@@ -3,15 +3,9 @@
 #include <string.h>
 
 #include "quicksort.h"
-#include "utils.h"
 
 static void merge(int *left, size_t l_size, int *right, size_t r_size, int *arr,
                   size_t arr_size) {
-    printf("Merging: ");
-    print_arr(left, l_size);
-    printf("| ");
-    print_arr(right, r_size);
-    printf("\n");
 
     int l_c = 0;
     int r_c = 0;
@@ -31,9 +25,6 @@ static void merge(int *left, size_t l_size, int *right, size_t r_size, int *arr,
     while (r_c < r_size && c < arr_size) {
         arr[c++] = right[r_c++];
     }
-    printf("merge result: ");
-    print_arr(arr, arr_size);
-    printf("\n");
 }
 
 // array to sort and it's length as parameters.
@@ -47,20 +38,15 @@ void merge_sort(int *arr, size_t l) {
     int mid_point = l / 2;
 
     // copy the left part of the array into a new array
-    printf("Left and right arrays: ");
 
     int *left = calloc(mid_point, sizeof(int));
     memcpy(left, arr, sizeof(int) * mid_point);
 
-    print_arr(left, mid_point);
-    printf("| ");
 
     // copy the right part of the array into a new array
     int *right = calloc(l - mid_point, sizeof(int));
     memcpy(right, arr + mid_point, sizeof(int) * (l - mid_point));
 
-    print_arr(right, l - mid_point);
-    printf("\n");
 
     // Here we recursively split the array in half the the array until
     // we get to singular elements. We start with the left half followed
