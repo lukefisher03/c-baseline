@@ -73,11 +73,10 @@ void insertion_sort(int *arr, size_t size) {
         int e = arr[i];
         // printf("Checking element: %i\n", e);
         size_t j = i - 1;
-        size_t curr_index = i;
 
         while (j >= 0) {
             if (e < arr[j]) {
-                arr[curr_index--] = arr[j];
+                arr[j+1] = arr[j];
                 arr[j] = e;
             } else {
                 break;
