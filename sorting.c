@@ -42,11 +42,9 @@ void merge_sort(int *arr, size_t size) {
     int *left = calloc(mid_point, sizeof(int));
     memcpy(left, arr, sizeof(int) * mid_point);
 
-
     // copy the right part of the array into a new array
     int *right = calloc(size - mid_point, sizeof(int));
     memcpy(right, arr + mid_point, sizeof(int) * (size - mid_point));
-
 
     // Here we recursively split the array in half the the array until
     // we get to singular elements. We start with the left half followed
@@ -76,7 +74,8 @@ void insertion_sort(int *arr, size_t size) {
 
         while (j >= 0) {
             if (e < arr[j]) {
-                arr[j+1] = arr[j];
+                // j+1 keeps track of the value i originally pointed to
+                arr[j + 1] = arr[j];
                 arr[j] = e;
             } else {
                 break;
