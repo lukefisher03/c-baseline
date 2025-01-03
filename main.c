@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "binary_search.h"
+#include "search.h"
 #include "sorting.h"
 #include "utils.h"
 

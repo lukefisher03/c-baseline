@@ -1,20 +1,20 @@
-main: main.o sorting.o utils.o binary_search.o
+main: main.o sorting.o utils.o search.o
 	echo "Linking and executing main..."
-	gcc -o main main.o sorting.o binary_search.o utils.o
+	gcc -o main bin/*.o
 
 main.o: main.c
 	echo "Compiling main"
-	gcc -g -c main.c
+	gcc -g -c main.c -o bin/main.o
 
 sorting.o: sorting.c
 	echo "Compiling sorting"
-	gcc -g -c sorting.c
+	gcc -g -c sorting.c -o bin/sorting.o
 
-binary_search.o: binary_search.c
-	echo "Compiling binary_search"
-	gcc -g -c binary_search.c
+search.o: search.c
+	echo "Compiling search"
+	gcc -g -c search.c -o bin/search.o
 
 utils.o: utils.c
 	echo "Compiling utils"
-	gcc -g -c utils.c
+	gcc -g -c utils.c -o bin/utils.o
 

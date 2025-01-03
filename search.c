@@ -1,4 +1,4 @@
-#include "binary_search.h"
+#include "search.h"
 
 // Search through sorted array
 int binary_search(int target, const int *arr, size_t size) {
