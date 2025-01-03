@@ -1,14 +1,14 @@
-main: main.o quicksort.o utils.o binary_search.o
+main: main.o sorting.o utils.o binary_search.o
 	echo "Linking and executing main..."
-	gcc -o main main.o quicksort.o binary_search.o utils.o
+	gcc -o main main.o sorting.o binary_search.o utils.o
 
 main.o: main.c
 	echo "Compiling main"
 	gcc -g -c main.c
 
-quicksort.o: quicksort.c
-	echo "Compiling quicksort"
-	gcc -g -c quicksort.c
+sorting.o: sorting.c
+	echo "Compiling sorting"
+	gcc -g -c sorting.c
 
 binary_search.o: binary_search.c
 	echo "Compiling binary_search"
